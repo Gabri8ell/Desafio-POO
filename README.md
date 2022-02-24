@@ -7,3 +7,5 @@ Desafio POO Digital Inovation One.
 - ### Criar classes
 - ### Atributos
 - ### Utilizar ferramentas da POO
+- #### Feito por Gabriel Anjos
+- #### https://github.com/Gabri8ell/Desafio-POO
