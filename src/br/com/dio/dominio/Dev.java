@@ -11,8 +11,8 @@ public class Dev {
     private Set<Conteudo> conteudosConcluidos= new LinkedHashSet<>();
 
     public void inscreverBootcamp(Bootcamp bootcamp){
-        this.conteudosConcluidos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevsInscritos().add(this);
+        this.conteudosInscrito.addAll(bootcamp.getConteudos());
+        bootcamp.setDevsInscritos(this);
 
     }
 
@@ -44,8 +44,8 @@ public class Dev {
         return conteudosInscrito;
     }
 
-    public void setConteudosInscrito(Set<Conteudo> conteudosInscrito) {
-        this.conteudosInscrito = conteudosInscrito;
+    public void setConteudosInscrito(Conteudo conteudosInscrito) {
+        this.conteudosInscrito.add(conteudosInscrito);
     }
 
     public Set<Conteudo> getConteudosConcluidos() {
@@ -67,5 +67,17 @@ public class Dev {
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudosInscrito, conteudosConcluidos);
+    }
+
+    @Override
+    public String toString() {
+        String tela ="";
+
+        tela +=  "Nome - " + nome;
+         tela += "\nConteudos inscritos: - " + conteudosInscrito;
+         tela += "\nConteudos concluidos - " + conteudosConcluidos;
+         tela += "\nXP - " + calcularTotalXP();
+
+         return  tela;
     }
 }
